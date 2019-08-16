@@ -122,7 +122,7 @@ class SortingRobot:
 
         return self.is_None_item()
 
-        # Step 3: Create a check for the None item and have it placed in the correct place.
+        # Step 3: Finally create a check for items with the value None (null) and have it sorted in the correct places.
     def is_None_item(self):
 
         if None in self._list:
