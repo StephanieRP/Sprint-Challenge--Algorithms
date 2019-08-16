@@ -100,6 +100,7 @@ class SortingRobot:
         """
         # Start Sprint Here
 
+        # Step 1: First loop to check the held item and continually have the robot move to the right.
         while self.can_move_right():
             # if the item being held is < than other items or None (anything but 1) change places
             # Robot should always move to the right
@@ -108,6 +109,27 @@ class SortingRobot:
                 self.swap_item()
 
             self.move_right()
+
+        # Step 2: Second loop to check the held item and continually have the robot move to the left.
+        while self.can_move_left():
+                # if held item > than other items card change places
+                # Robot should always move to the left
+
+            if self.compare_item() == 1:
+                self.swap_item()
+
+            self.move_left()
+
+        return self.is_None_item()
+
+        # Step 3: Create a check for the None item and have it placed in the correct place.
+    def is_None_item(self):
+
+        if None in self._list:
+            return self.sort()
+
+        else:
+            return self._list
 
 
 if __name__ == "__main__":
